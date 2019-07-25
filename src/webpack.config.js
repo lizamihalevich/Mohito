@@ -72,6 +72,10 @@ module.exports = {
             },
         ],
     },
+    resolve: {
+        modules: ['./', 'node_modules'],
+        extensions: ['.js', '.jsx', '.pcss'],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'views/index.html'),

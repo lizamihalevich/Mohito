@@ -30,6 +30,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "history": "^4.9.0",
     "postcss": "^7.0.17",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
@@ -38,7 +39,9 @@
     "postcss-preset-env": "^6.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.9"
+    "react-hot-loader": "^4.12.9",
+    "react-proptypes": "^1.0.0",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

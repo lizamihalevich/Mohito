@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom';
+import Layout from 'components/layout';
+import { createBrowserHistory } from 'history';
 import './index.pcss';
 
 function App() {
+    const history = createBrowserHistory();
     return (
-        <div>
-          hey
-        </div>
+        <Router history={history}>
+            <Layout />
+        </Router>
     );
 }
 
