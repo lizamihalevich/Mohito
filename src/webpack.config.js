@@ -30,18 +30,14 @@ module.exports = {
         },
         {
             test: /\.jsx?$/,
+            use: ['babel-loader', 'eslint-loader'],
             exclude: /node_modules/,
-            loader: 'babel-loader',
         },
-        {
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract(
-                {
-                    fallback: 'style-loader',
-                    use: ['css-loader']
-                }
-            )
-        },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
+            },
+
             {
                 test: /\.(png|jpg|gif)$/,
                 use: [
@@ -49,8 +45,28 @@ module.exports = {
                         loader: 'file-loader'
                     }
                 ]
-            }
+            },
+            {
+                test: /\.pcss$/,
+                use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            importLoaders: 1,
+                            camelCase: true,
+                            localIdentName: '[local]_[hash:base64:5]',
+                        },
+                    },
+                    { loader: 'postcss-loader' },
+                ],
+            },
         ]
+    },
+    resolve: {
+        modules: ['./', 'node_modules'],
+        extensions: ['.js', '.jsx', '.pcss'],
     },
     plugins: [
         new HtmlWebPackPlugin({
