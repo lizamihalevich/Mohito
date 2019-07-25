@@ -16,6 +16,7 @@ module.exports = {
         path: path.join(__dirname, "/dist"),
         filename: "index_bundle.js"
     },
+    context: path.resolve(__dirname, './'),
     module: {
         rules: [{
             test: /\.js$/,
@@ -26,7 +27,13 @@ module.exports = {
                     presets: ['@babel/preset-react']
                 }
             }
-        }, {
+        },
+        {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+        },
+        {
             test: /\.css$/,
             use: ExtractTextPlugin.extract(
                 {
@@ -48,8 +55,7 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             hash: true,
-            filename: "index.html",  //target html
-            template: "./src/index.html" //source html
+            template: "index.html"
         }),
         new ExtractTextPlugin({ filename: 'css/style.css' })
     ]

@@ -10,6 +10,6 @@ function App() {
 }
 
 ReactDOM.render(
-        <App />
+    <App />,
     window.document.getElementById('app'),
 );

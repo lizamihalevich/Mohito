@@ -21,6 +21,7 @@
   "homepage": "https://github.com/lizamihalevich/Mohito#readme",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "babel-polyfill": "^6.26.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
