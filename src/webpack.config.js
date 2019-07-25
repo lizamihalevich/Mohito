@@ -50,6 +50,26 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: ['url-loader?limit=5000&name=assets/[name].[hash].[ext]?'],
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.pcss$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              camelCase: true,
+              localIdentName: '[local]_[hash:base64:5]',
+            },
+          },
+          { loader: 'postcss-loader' },
+        ],
+      },
     ]
   },
   plugins: [
