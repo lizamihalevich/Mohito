@@ -1,3 +1,5 @@
 # Mohito
 
-Contributors: Liza Mihalevich, Mark Chepicov
+Coctail SPA on React.js
+
+By Liza Mihalevich & Mark Chepicov
