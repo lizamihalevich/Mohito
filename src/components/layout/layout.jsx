@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import CocktailList from 'components/cocktailsList';
 import Header from './components/header';
-import CocktailList from '../cocktailsList';
 
 class Layout extends Component {
     render() {
@@ -12,7 +12,7 @@ class Layout extends Component {
                 />
                 <div className="wrapper">
                     <Switch>
-                        <Route path="/" component={() => <div> <CocktailList /> </div>} />
+                        <Route path="/" component={CocktailList} />
                     </Switch>
                 </div>
             </div>
